@@ -1,0 +1,167 @@
+Testing: dev_examples.tsv
+The accuracy of word_features is: 0.8642857142857143
+Confusion Matrix: 
+
+         |   n   p |
+         |   e   o |
+         |   g   s |
+         |   a   i |
+         |   t   t |
+         |   i   i |
+         |   v   v |
+         |   e   e |
+---------+---------+
+negative |<132>  8 |
+positive |  30<110>|
+---------+---------+
+(row = reference; col = test)
+
+Testing: train_examples.tsv
+The accuracy of word_features is: 0.9966666666666667
+Confusion Matrix: 
+
+         |   n   p |
+         |   e   o |
+         |   g   s |
+         |   a   i |
+         |   t   t |
+         |   i   i |
+         |   v   v |
+         |   e   e |
+---------+---------+
+negative |<598>  2 |
+positive |   2<598>|
+---------+---------+
+(row = reference; col = test)
+
+Testing: test.txt
+The accuracy of word_features is: 0.0
+Confusion Matrix: 
+
+         |       n   p |
+         |       e   o |
+         |       g   s |
+         |       a   i |
+         |       t   t |
+         |       i   i |
+         |       v   v |
+         |       e   e |
+---------+-------------+
+         |  <.>247 155 |
+negative |   .  <.>  . |
+positive |   .   .  <.>|
+---------+-------------+
+(row = reference; col = test)
+
+Testing: dev_examples.tsv
+The accuracy of word_pos_features is: 0.75
+Confusion Matrix: 
+
+         |   n   p |
+         |   e   o |
+         |   g   s |
+         |   a   i |
+         |   t   t |
+         |   i   i |
+         |   v   v |
+         |   e   e |
+---------+---------+
+negative |<131>  9 |
+positive |  61 <79>|
+---------+---------+
+(row = reference; col = test)
+
+Testing: train_examples.tsv
+The accuracy of word_pos_features is: 0.9975
+Confusion Matrix: 
+
+         |   n   p |
+         |   e   o |
+         |   g   s |
+         |   a   i |
+         |   t   t |
+         |   i   i |
+         |   v   v |
+         |   e   e |
+---------+---------+
+negative |<598>  2 |
+positive |   1<599>|
+---------+---------+
+(row = reference; col = test)
+
+Testing: test.txt
+The accuracy of word_pos_features is: 0.0
+Confusion Matrix: 
+
+         |       n   p |
+         |       e   o |
+         |       g   s |
+         |       a   i |
+         |       t   t |
+         |       i   i |
+         |       v   v |
+         |       e   e |
+---------+-------------+
+         |  <.>276 126 |
+negative |   .  <.>  . |
+positive |   .   .  <.>|
+---------+-------------+
+(row = reference; col = test)
+
+Testing: dev_examples.tsv
+The accuracy of word_pos_liwc_features is: 0.7392857142857143
+Confusion Matrix: 
+
+         |   n   p |
+         |   e   o |
+         |   g   s |
+         |   a   i |
+         |   t   t |
+         |   i   i |
+         |   v   v |
+         |   e   e |
+---------+---------+
+negative |<127> 13 |
+positive |  60 <80>|
+---------+---------+
+(row = reference; col = test)
+
+Testing: train_examples.tsv
+The accuracy of word_pos_liwc_features is: 0.9925
+Confusion Matrix: 
+
+         |   n   p |
+         |   e   o |
+         |   g   s |
+         |   a   i |
+         |   t   t |
+         |   i   i |
+         |   v   v |
+         |   e   e |
+---------+---------+
+negative |<593>  7 |
+positive |   2<598>|
+---------+---------+
+(row = reference; col = test)
+
+Testing: test.txt
+The accuracy of word_pos_liwc_features is: 0.0
+Confusion Matrix: 
+
+         |       n   p |
+         |       e   o |
+         |       g   s |
+         |       a   i |
+         |       t   t |
+         |       i   i |
+         |       v   v |
+         |       e   e |
+---------+-------------+
+         |  <.>274 128 |
+negative |   .  <.>  . |
+positive |   .   .  <.>|
+---------+-------------+
+(row = reference; col = test)
+
+
+The feature set which resulted in the best accuracy was the word_features. However, when testing with the liwc features, I found that the accuracies increase when you have a selected amount of liwc features, rather than using all of them. This is due to there being a vast amount of data, which can lead to more instances of misclassification. Therefore, I selected a handful of liwc features which brought 76%~ accuracy and is commented out in the features file. I found that classifying the negative texts was less fruitful than the positive texts, so I chose features that were the baselines for what would fuel myself to write a negative review.
